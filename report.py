@@ -1,4 +1,3 @@
-from typing import Text
 from texttable import Texttable
 from sys import argv
 import json
