@@ -1,7 +1,12 @@
-from sys import argv, stdout
+from audioop import reverse
+from sys import argv
 from json import dump
 from time import time
 from subprocess import check_output, STDOUT
+import re
+import maxminddb
+import geoip2.database
+from geopy.geocoders import Nominatim
 
 def dns_resolvers():
     with open('public_dns_resolvers.txt', 'r') as dns_res_file:
@@ -110,7 +115,85 @@ def scan_hsts(hostname):
         return False
     hsts_header = list(filter(lambda header: 'strict-transport-security' in header or 'Strict-Transport-Security' in header, curl_resp_formatted))
     return len(hsts_header) == 1
-        
+
+def scan_tls_versions(hostname):
+    tls_versions = []
+    try:
+        nmap_output = check_output(['nmap', '--script', 'ssl-enum-ciphers', '-p' '443', hostname], timeout=2, stderr=STDOUT).decode('utf-8')
+        if 'TLSv1.0' in nmap_output:
+            tls_versions.append('TLSv1.0')
+        if 'TLSv1.1' in nmap_output:
+            tls_versions.append('TLSv1.1')
+        if 'TLSv1.2' in nmap_output:
+            tls_versions.append('TLSv1.2')
+    except Exception as e:
+        print('scan_tls_version: nmap failed - {}'.format(e))
+    try:
+        openssl_output = check_output(['openssl', 's_client', '-tls1_3', '-connect', hostname+':443'], input=b'',timeout=2, stderr=STDOUT).decode('utf-8')
+        if 'TLSv1.3' in openssl_output:
+            tls_versions.append('TLSv1.3')
+    except Exception as e:
+        print('scan_tls_version: openssl failed - {}'.format(e))  
+    return tls_versions
+
+def scan_root_ca(hostname):
+    try:
+        openssl_output = check_output(['openssl', 's_client', '-connect', hostname+':443'], input=b'', timeout=2, stderr=STDOUT).decode('utf-8')
+        # print(openssl_output)
+        cert_chain = list(filter(lambda header: 'Certificate chain' in header, openssl_output.split('---')))[0]
+        root_cert = re.search('O = [\w\s.]+', cert_chain.splitlines()[-1]).group(0)
+        return root_cert.split('O = ')[1]
+    except Exception as e:
+        print('scan_root_ca: openssl failed - {}'.format(e))
+        return None
+
+def scan_rdns_names(ipv4_addresses):
+    rdns_names = set()
+    for ip_addr in ipv4_addresses:
+        try:
+            host_output = check_output(['host', ip_addr], timeout=2, stderr=STDOUT).decode('utf-8').splitlines()
+            for line in host_output:
+                rdns_names.add(line.split()[-1][:-1])
+
+        except Exception as e:
+            print('scan_rdns_names: host command failed for {}- {}'.format(ip_addr,e))
+    return list(rdns_names)
+def scan_rtt_range(ipv4_addresses):
+    min_rtt = float('inf')
+    max_rtt = float('-inf')
+    ports = ['443', '80']
+    for ip_addr in ipv4_addresses:
+        for port in ports:
+            try:
+                time_output = check_output("sh -c \"time echo -e '\\x1dclose\\x0d' | telnet {} {}\"".format(ip_addr, port), timeout=2, shell=True, stderr=STDOUT).decode('utf-8').splitlines()
+                # print(time_output)
+                rtt = int(float(list(filter(lambda line: 'real' in line, time_output))[0].split('m')[1].split('s')[0]) * 1000)
+                if rtt > max_rtt:
+                    max_rtt = rtt
+                if rtt < min_rtt:
+                    min_rtt = rtt
+            except Exception as e:
+                print('scan_rtt_range: rtt failed - {}'.format(e))
+    if min_rtt == float('inf') and max_rtt == float('-inf'):
+        return None
+    return [min_rtt, max_rtt]
+            
+
+def scan_geo_locations(ipv4_addresses):
+    geo_locations = set()
+    for ip_addr in ipv4_addresses:
+        try:
+            with maxminddb.open_database('GeoLite2-City.mmdb') as reader:
+                geolocation = reader.get(ip_addr)
+                geolocator = Nominatim(user_agent='340-network-scanner')
+                location = geolocator.reverse(str(geolocation['location']['latitude']) + ", " + str(geolocation['location']['longitude']))
+                address = location.raw['address']
+                geo_locations.add(address['county'] + ', ' + address['state'] + ', ' + address['country'])
+        except Exception as e:
+            print('scan_geo_locations failed: {}'.format(e))
+
+    return list(geo_locations)
+
 def scan():
     DNS_RESOLVERS = dns_resolvers()
     json_object = {}
@@ -129,13 +212,39 @@ def scan():
             json_object[hostname]['redirect_to_https'] = scan_redirect_to_https(curl_response)
 
             json_object[hostname]['hsts'] = scan_hsts(hostname)
+            json_object[hostname]['tls_versions'] = scan_tls_versions(hostname)
+            json_object[hostname]['root_ca'] = scan_root_ca(hostname)
+
+            json_object[hostname]['rdns_names'] = scan_rdns_names(ipv4_addresses)
+            json_object[hostname]['rtt_range'] = scan_rtt_range(ipv4_addresses)
+            json_object[hostname]['geo_locations'] = scan_geo_locations(ipv4_addresses)
 
     with open(argv[2], 'w') as output:
         dump(json_object, output, sort_keys=True, indent=4)
 
 dev = False
 if dev:
-    print(curl_get_request('twitter.com/', https=True).decode('utf-8').splitlines())
+    # # print(curl_get_request('twitter.com/', https=True).decode('utf-8').splitlines())
+    # print(check_output(['openssl', 's_client', '-tls1_3', '-connect', 'tls13.cloudflare.com:443'], stderr=STDOUT).decode('utf-8'))
+    with maxminddb.open_database('GeoLite2-City.mmdb') as reader:
+        geolocation = reader.get('129.105.1.129')
+        # print(geolocation)
+        geolocator = Nominatim(user_agent='340-network-scanner')
+        location = geolocator.reverse(str(geolocation['location']['latitude']) + ", " + str(geolocation['location']['longitude']))
+        print(location.raw)
+    # with geoip2.database.Reader('GeoLite2-City.mmdb') as reader:
+    #     geolocation = reader.city('129.105.136.48')
+    #     # print(geolocation.location.latitude)
+    #     geolocator = Nominatim(user_agent='340-network-scanner')
+    #     location = geolocator.reverse(str(geolocation.location.latitude) + ", " + str(geolocation.location.longitude))
+    #     print(location)
+        # geolocator = Nominatim(user_agent='340-network-scanner')
+        # print(geolocation)
+        # location = geolocator.reverse(str(geolocation['location']['latitude']) + ", " + str(geolocation['location']['longitude']))
+        # print(location)
+        # print(geolocation)
+        # print(type(geolocation['location']['latitude']))
+        # print(reverse_geocode.search((geolocation['location']['latitude'], geolocation['location']['longitude'])))
 else:
     scan()
 

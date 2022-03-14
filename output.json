@@ -1,18 +1,37 @@
 {
     "amazon.com": {
+        "geo_locations": [
+            "Loudoun County, Virginia, United States"
+        ],
         "hsts": true,
         "http_server": "Server",
         "insecure_http": true,
         "ipv4_addresses": [
-            "176.32.103.205",
+            "205.251.242.103",
             "54.239.28.85",
-            "205.251.242.103"
+            "176.32.103.205"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "s3-console-us-standard.console.aws.amazon.com"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956464.3381453
+        "root_ca": null,
+        "rtt_range": [
+            20,
+            25
+        ],
+        "scan_time": 1647145235.7207558,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2"
+        ]
     },
     "asee.org": {
+        "geo_locations": [
+            "Rappahannock County, Virginia, United States"
+        ],
         "hsts": false,
         "http_server": null,
         "insecure_http": true,
@@ -20,10 +39,20 @@
             "20.49.104.48"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956564.651895
+        "root_ca": "DigiCert Inc",
+        "rtt_range": [
+            18,
+            19
+        ],
+        "scan_time": 1647145389.9717839,
+        "tls_versions": [
+            "TLSv1.2"
+        ]
     },
     "auditoryneuroscience.com": {
+        "geo_locations": [],
         "hsts": false,
         "http_server": "Apache/2.4.41 (Ubuntu)",
         "insecure_http": true,
@@ -31,10 +60,24 @@
             "144.214.26.111"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "twinkle.bms.cityu.edu.hk"
+        ],
         "redirect_to_https": false,
-        "scan_time": 1646956558.1690876
+        "root_ca": "Digital Signature Trust Co.",
+        "rtt_range": [
+            202,
+            203
+        ],
+        "scan_time": 1647145379.0767531,
+        "tls_versions": [
+            "TLSv1.3"
+        ]
     },
     "clocktab.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": "cloudflare",
         "insecure_http": true,
@@ -45,67 +88,130 @@
             "188.114.99.128"
         ],
         "ipv6_addresses": [
+            "2606:4700:3030::6815:2377",
             "2606:4700:3036::ac43:dc18",
             "2a06:98c1:3120:8000::",
-            "2606:4700:3030::6815:2377",
             "2606:4700:130:436c:6f75:6466:6c61:7265"
         ],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956553.1230922
+        "root_ca": "Baltimore",
+        "rtt_range": [
+            3,
+            4
+        ],
+        "scan_time": 1647145371.7388647,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "en.wikipedia.org": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": true,
         "http_server": "Varnish",
         "insecure_http": true,
         "ipv4_addresses": [
-            "208.80.154.224",
             "91.198.174.192",
-            "208.80.153.224"
+            "208.80.153.224",
+            "208.80.154.224"
         ],
         "ipv6_addresses": [
-            "2620:0:861:ed1a::1",
             "2620:0:862:ed1a::1",
-            "2620:0:860:ed1a::1"
+            "2620:0:860:ed1a::1",
+            "2620:0:861:ed1a::1"
+        ],
+        "rdns_names": [
+            "text-lb.codfw.wikimedia.org",
+            "text-lb.eqiad.wikimedia.org",
+            "text-lb.esams.wikimedia.org"
         ],
         "redirect_to_https": true,
-        "scan_time": 1646956449.6244342
+        "root_ca": "Digital Signature Trust Co.",
+        "rtt_range": [
+            26,
+            99
+        ],
+        "scan_time": 1647145203.5884187,
+        "tls_versions": [
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "facebook.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": true,
         "http_server": null,
         "insecure_http": true,
         "ipv4_addresses": [
-            "157.240.18.35",
-            "157.240.19.35",
+            "157.240.236.35",
             "157.240.2.35",
-            "185.60.216.35",
-            "31.13.92.36"
+            "157.240.18.35",
+            "157.240.19.35"
         ],
         "ipv6_addresses": [
-            "2a03:2880:f127:283:face:b00c:0:25de",
-            "2a03:2880:f142:82:face:b00c:0:25de",
-            "2a03:2880:f11c:8083:face:b00c:0:25de",
+            "2a03:2880:f134:183:face:b00c:0:25de",
             "2a03:2880:f127:83:face:b00c:0:25de",
-            "2a03:2880:f134:183:face:b00c:0:25de"
+            "2a03:2880:f12d:181:face:b00c:0:25de",
+            "2a03:2880:f127:283:face:b00c:0:25de"
+        ],
+        "rdns_names": [
+            "edge-star-mini-shv-01-ort2.facebook.com",
+            "edge-star-mini-shv-02-frx5.facebook.com",
+            "edge-star-mini-shv-02-ort2.facebook.com",
+            "edge-star-mini-shv-01-dfw5.facebook.com"
         ],
         "redirect_to_https": true,
-        "scan_time": 1646956459.3681128
+        "root_ca": "DigiCert Inc",
+        "rtt_range": [
+            2,
+            106
+        ],
+        "scan_time": 1647145228.1944106,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "fandom.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": "Varnish",
         "insecure_http": true,
         "ipv4_addresses": [
-            "151.101.192.194",
-            "151.101.128.194",
             "151.101.64.194",
-            "151.101.0.194"
+            "151.101.0.194",
+            "151.101.128.194",
+            "151.101.192.194"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956485.506366
+        "root_ca": "GlobalSign",
+        "rtt_range": [
+            3,
+            3
+        ],
+        "scan_time": 1647145271.8979023,
+        "tls_versions": [
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "gradeinflation.com": {
+        "geo_locations": [
+            "Capital Regional District, British Columbia, Canada"
+        ],
         "hsts": false,
         "http_server": "nginx",
         "insecure_http": true,
@@ -113,10 +219,24 @@
             "51.79.45.180"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "gw1.ahs5.r4l.com"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956570.4299846
+        "root_ca": "Digital Signature Trust Co.",
+        "rtt_range": [
+            20,
+            21
+        ],
+        "scan_time": 1647145398.3292568,
+        "tls_versions": [
+            "TLSv1.3"
+        ]
     },
     "illinois.edu": {
+        "geo_locations": [
+            "Champaign County, Illinois, United States"
+        ],
         "hsts": false,
         "http_server": "Apache/2.2.15 (Red Hat) mod_ssl/2.2.15 OpenSSL/1.0.1e-fips",
         "insecure_http": true,
@@ -124,44 +244,95 @@
             "192.17.172.3"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "tardis.techservices.illinois.edu"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956543.791175
+        "root_ca": "Comodo CA Limited",
+        "rtt_range": [
+            6,
+            6
+        ],
+        "scan_time": 1647145357.1315231,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2"
+        ]
     },
     "imdb.com": {
+        "geo_locations": [
+            "Loudoun County, Virginia, United States"
+        ],
         "hsts": true,
         "http_server": "Server",
         "insecure_http": true,
         "ipv4_addresses": [
-            "52.94.225.248",
+            "52.94.237.74",
             "52.94.228.167",
-            "52.94.237.74"
+            "52.94.225.248"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956480.2327
+        "root_ca": null,
+        "rtt_range": [
+            22,
+            25
+        ],
+        "scan_time": 1647145263.2513282,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2"
+        ]
     },
     "instagram.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": true,
         "http_server": "proxygen-bolt",
         "insecure_http": true,
         "ipv4_addresses": [
             "31.13.93.174",
+            "157.240.236.174",
             "157.240.2.174",
             "157.240.18.174",
-            "157.240.195.174",
-            "31.13.92.174"
+            "157.240.195.174"
         ],
         "ipv6_addresses": [
+            "2a03:2880:f227:e5:face:b00c:0:4420",
+            "2a03:2880:f22d:1e6:face:b00c:0:4420",
+            "2a03:2880:f234:e5:face:b00c:0:4420",
             "2a03:2880:f227:2e5:face:b00c:0:4420",
-            "2a03:2880:f242:e0:face:b00c:0:4420",
-            "2a03:2880:f234:1e5:face:b00c:0:4420",
-            "2a03:2880:f21c:80e5:face:b00c:0:4420",
-            "2a03:2880:f227:e5:face:b00c:0:4420"
+            "2a03:2880:f21c:81e5:face:b00c:0:4420"
+        ],
+        "rdns_names": [
+            "instagram-p42-shv-01-ort2.fbcdn.net",
+            "instagram-p42-shv-02-dfw5.fbcdn.net",
+            "instagram-p42-shv-02-frx5.fbcdn.net",
+            "instagram-p42-shv-01-mrs2.fbcdn.net",
+            "instagram-p42-shv-02-ort2.fbcdn.net"
         ],
         "redirect_to_https": true,
-        "scan_time": 1646956502.397273
+        "root_ca": "DigiCert Inc",
+        "rtt_range": [
+            2,
+            105
+        ],
+        "scan_time": 1647145298.63537,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "it.eecs.northwestern.edu": {
+        "geo_locations": [
+            "Cook County, Illinois, United States"
+        ],
         "hsts": false,
         "http_server": "Apache/2.4.37 (Red Hat Enterprise Linux) OpenSSL/1.1.1k",
         "insecure_http": true,
@@ -169,41 +340,85 @@
             "129.105.5.142"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "it.ece.northwestern.edu"
+        ],
         "redirect_to_https": false,
-        "scan_time": 1646956532.0306137
+        "root_ca": "Unspecified",
+        "rtt_range": [
+            2,
+            2
+        ],
+        "scan_time": 1647145342.8317568,
+        "tls_versions": [
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "kellogg.northwestern.edu": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": "Microsoft-IIS/10.0",
         "insecure_http": true,
         "ipv4_addresses": [
-            "165.124.129.72",
-            "165.124.147.150"
+            "165.124.147.150",
+            "165.124.129.72"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "kelloggalumni.kellogg.northwestern.edu"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956521.5083952
+        "root_ca": "Comodo CA Limited",
+        "rtt_range": [
+            2,
+            2
+        ],
+        "scan_time": 1647145328.4094858,
+        "tls_versions": [
+            "TLSv1.2"
+        ]
     },
     "kli.org": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": "cloudflare",
         "insecure_http": true,
         "ipv4_addresses": [
-            "188.114.97.128",
             "104.21.4.169",
-            "172.67.132.72",
-            "172.64.80.1"
+            "188.114.97.128",
+            "172.64.80.1",
+            "172.67.132.72"
         ],
         "ipv6_addresses": [
-            "2a06:98c1:3122:8000::",
-            "2606:4700:3033::6815:4a9",
             "2606:4700:130:436c:6f75:6466:6c61:7265",
-            "2606:4700:3035::ac43:8448"
+            "2a06:98c1:3122:8000::",
+            "2606:4700:3035::ac43:8448",
+            "2606:4700:3033::6815:4a9"
         ],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956585.9720201
+        "root_ca": "Baltimore",
+        "rtt_range": [
+            3,
+            4
+        ],
+        "scan_time": 1647145424.1475651,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "mccormick.northwestern.edu": {
+        "geo_locations": [
+            "Cook County, Illinois, United States"
+        ],
         "hsts": false,
         "http_server": "Apache/2.4.7 (Ubuntu)",
         "insecure_http": true,
@@ -211,10 +426,26 @@
             "129.105.1.129"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "mccormick.northwestern.edu"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956517.4821866
+        "root_ca": "Comodo CA Limited",
+        "rtt_range": [
+            1,
+            2
+        ],
+        "scan_time": 1647145322.1381319,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2"
+        ]
     },
     "northwestern.edu": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": "BigIP",
         "insecure_http": true,
@@ -222,24 +453,56 @@
             "129.105.136.48"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "cnair.northwestern.edu",
+            "evcommon-caesar-vip.northwestern.edu"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956512.3369145
+        "root_ca": "The USERTRUST Network",
+        "rtt_range": [
+            2,
+            2
+        ],
+        "scan_time": 1647145315.6186807,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2"
+        ]
     },
     "pinterest.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": true,
         "http_server": null,
         "insecure_http": true,
         "ipv4_addresses": [
-            "151.101.128.84",
             "151.101.0.84",
+            "151.101.128.84",
             "151.101.192.84",
             "151.101.64.84"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956491.8384376
+        "root_ca": "DigiCert Inc",
+        "rtt_range": [
+            3,
+            3
+        ],
+        "scan_time": 1647145283.7887297,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "pmichaud.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": "Apache",
         "insecure_http": true,
@@ -247,24 +510,51 @@
             "23.254.203.248"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "hwsrv-233708.hostwindsdns.com"
+        ],
         "redirect_to_https": false,
-        "scan_time": 1646956580.8407533
+        "root_ca": "Comodo CA Limited",
+        "rtt_range": [
+            30,
+            30
+        ],
+        "scan_time": 1647145416.1733403,
+        "tls_versions": [
+            "TLSv1.3"
+        ]
     },
     "reddit.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": true,
         "http_server": "snooserv",
         "insecure_http": true,
         "ipv4_addresses": [
-            "151.101.65.140",
-            "151.101.129.140",
+            "151.101.1.140",
             "151.101.193.140",
-            "151.101.1.140"
+            "151.101.129.140",
+            "151.101.65.140"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956473.705608
+        "root_ca": "DigiCert Inc",
+        "rtt_range": [
+            3,
+            3
+        ],
+        "scan_time": 1647145252.6648552,
+        "tls_versions": [
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "spacejam.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": true,
         "http_server": "Apache/2.4.51 () OpenSSL/1.0.2k-fips",
         "insecure_http": true,
@@ -273,10 +563,25 @@
             "75.2.104.223"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "a259cf76d74e1f65f.awsglobalaccelerator.com"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956575.5121338
+        "root_ca": "GlobalSign",
+        "rtt_range": [
+            2,
+            3
+        ],
+        "scan_time": 1647145405.8740711,
+        "tls_versions": [
+            "TLSv1.1",
+            "TLSv1.2"
+        ]
     },
     "stevetarzia.com": {
+        "geo_locations": [
+            "Morrow County, Oregon, United States"
+        ],
         "hsts": false,
         "http_server": "Apache/2.2.34 (Amazon)",
         "insecure_http": true,
@@ -284,38 +589,75 @@
             "54.245.121.172"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "grits.stevetarzia.com"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956547.9615057
+        "root_ca": "Digital Signature Trust Co.",
+        "rtt_range": [
+            58,
+            58
+        ],
+        "scan_time": 1647145363.71408,
+        "tls_versions": []
     },
     "tripadvisor.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": null,
         "insecure_http": true,
         "ipv4_addresses": [
-            "151.101.66.28",
-            "151.101.130.28",
             "151.101.2.28",
-            "151.101.194.28"
+            "151.101.194.28",
+            "151.101.66.28",
+            "151.101.130.28"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956496.6955822
+        "root_ca": "GlobalSign",
+        "rtt_range": [
+            3,
+            14
+        ],
+        "scan_time": 1647145290.9738464,
+        "tls_versions": [
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "twitter.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": true,
         "http_server": null,
         "insecure_http": true,
         "ipv4_addresses": [
+            "104.244.42.193",
             "104.244.42.65",
             "104.244.42.1",
-            "104.244.42.129",
-            "104.244.42.193"
+            "104.244.42.129"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956454.615134
+        "root_ca": "DigiCert Inc",
+        "rtt_range": [
+            17,
+            19
+        ],
+        "scan_time": 1647145211.8643172,
+        "tls_versions": [
+            "TLSv1.3"
+        ]
     },
     "uchicago.edu": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": "Apache",
         "insecure_http": true,
@@ -323,10 +665,24 @@
             "34.200.129.209"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "ec2-34-200-129-209.compute-1.amazonaws.com"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956537.4889722
+        "root_ca": "The USERTRUST Network",
+        "rtt_range": [
+            24,
+            25
+        ],
+        "scan_time": 1647145348.6342227,
+        "tls_versions": [
+            "TLSv1.3"
+        ]
     },
     "users.cs.northwestern.edu": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": "Apache",
         "insecure_http": true,
@@ -334,62 +690,128 @@
             "165.124.180.20"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [
+            "web1.cs.northwestern.edu"
+        ],
         "redirect_to_https": true,
-        "scan_time": 1646956526.943853
+        "root_ca": "The USERTRUST Network",
+        "rtt_range": [
+            1,
+            2
+        ],
+        "scan_time": 1647145336.9435222,
+        "tls_versions": [
+            "TLSv1.2"
+        ]
     },
     "walmart.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": false,
         "http_server": null,
         "insecure_http": true,
         "ipv4_addresses": [
-            "161.170.232.170",
-            "161.170.230.170"
+            "161.170.230.170",
+            "161.170.232.170"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956507.388667
+        "root_ca": "GlobalSign",
+        "rtt_range": [
+            29,
+            30
+        ],
+        "scan_time": 1647145306.971949,
+        "tls_versions": []
     },
     "yelp.com": {
+        "geo_locations": [
+            "Dallas County, Texas, United States",
+            "Cook County, Illinois, United States"
+        ],
         "hsts": true,
         "http_server": "Varnish",
         "insecure_http": true,
         "ipv4_addresses": [
             "199.232.76.116",
+            "199.232.8.116",
+            "151.101.68.116",
             "146.75.76.116",
             "151.101.36.116",
-            "199.232.8.116",
-            "151.101.68.116"
+            "151.101.244.116"
         ],
         "ipv6_addresses": [],
+        "rdns_names": [],
         "redirect_to_https": true,
-        "scan_time": 1646956469.2110891
+        "root_ca": "DigiCert Inc",
+        "rtt_range": [
+            3,
+            123
+        ],
+        "scan_time": 1647145243.8870203,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     },
     "youtube.com": {
+        "geo_locations": [
+            "Reno County, Kansas, United States"
+        ],
         "hsts": true,
         "http_server": "ESF",
         "insecure_http": true,
         "ipv4_addresses": [
-            "172.217.4.46",
-            "142.250.186.110",
-            "142.250.191.206",
+            "142.250.190.110",
+            "172.217.14.174",
+            "142.251.32.78",
+            "142.250.186.46",
+            "142.250.191.110",
             "142.251.32.14",
-            "142.251.41.78",
-            "142.250.190.14",
-            "142.250.190.78"
+            "142.250.191.174",
+            "142.250.190.142",
+            "172.217.0.174"
         ],
         "ipv6_addresses": [
-            "2607:f8b0:4000:818::200e",
-            "2607:f8b0:4009:81c::200e",
-            "2607:f8b0:4009:808::200e",
-            "2607:f8b0:4009:807::200e",
+            "2607:f8b0:4009:819::200e",
+            "2607:f8b0:4009:814::200e",
             "2607:f8b0:4009:809::200e",
             "2607:f8b0:4009:801::200e",
+            "2a00:1450:4001:829::200e",
+            "2607:f8b0:400b:807::200e",
             "2607:f8b0:4009:817::200e",
-            "2607:f8b0:400b:804::200e",
-            "2a00:1450:4001:830::200e",
-            "2607:f8b0:4009:804::200e"
+            "2607:f8b0:4009:81b::200e",
+            "2607:f8b0:4009:80b::200e"
+        ],
+        "rdns_names": [
+            "fra24s04-in-f14.1e100.net",
+            "yyz08s10-in-f174.1e100.net",
+            "yyz12s07-in-f14.1e100.net",
+            "ord38s33-in-f14.1e100.net",
+            "mia09s16-in-f14.1e100.net",
+            "ord38s42-in-f14.1e100.net",
+            "ord37s36-in-f14.1e100.net",
+            "ord37s35-in-f14.1e100.net",
+            "ord38s30-in-f14.1e100.net",
+            "dfw28s22-in-f14.1e100.net",
+            "ord38s28-in-f14.1e100.net"
         ],
         "redirect_to_https": true,
-        "scan_time": 1646956444.6301277
+        "root_ca": "GlobalSign nv",
+        "rtt_range": [
+            2,
+            98
+        ],
+        "scan_time": 1647145193.1086283,
+        "tls_versions": [
+            "TLSv1.0",
+            "TLSv1.1",
+            "TLSv1.2",
+            "TLSv1.3"
+        ]
     }
 }
