@@ -56,7 +56,7 @@ table1.set_cols_align(["c"] * len(rows1[0]))
 table1.set_cols_valign(["c"] * len(rows1[0]))
 table1.set_cols_width([6] * len(rows1[0]))
 table1.add_rows(rows1)
-print(table1.draw()+'\n')
+# print(table1.draw()+'\n')
 
 rtt.sort(key=lambda range: range[1][0])
 rows2 = [["domain", "rtt"]]+[[item[0], item[1]] for item in rtt]
@@ -65,7 +65,7 @@ table2.set_cols_align(["c"] * len(rows2[0]))
 table2.set_cols_valign(["c"] * len(rows2[0]))
 table2.set_cols_width([30] * len(rows2[0]))
 table2.add_rows(rows2)
-print(table2.draw()+'\n')
+# print(table2.draw()+'\n')
 
 root_ca = [[cert, count] for cert, count in root_ca.items()]
 root_ca.sort(key=lambda cert_entry: cert_entry[1], reverse=True)
@@ -75,7 +75,7 @@ table3.set_cols_align(["c"] * len(rows3[0]))
 table3.set_cols_valign(["c"] * len(rows3[0]))
 table3.set_cols_width([30] * len(rows3[0]))
 table3.add_rows(rows3)
-print(table3.draw()+'\n')
+# print(table3.draw()+'\n')
 
 servers = [[serv, count] for serv, count in servers.items()]
 servers.sort(key=lambda serv_entry: serv_entry[1], reverse=True)
@@ -85,7 +85,7 @@ table4.set_cols_align(["c"] * len(rows4[0]))
 table4.set_cols_valign(["c"] * len(rows4[0]))
 table4.set_cols_width([30] * len(rows4[0]))
 table4.add_rows(rows4)
-print(table4.draw()+'\n')
+# print(table4.draw()+'\n')
 
 stats = [[stat, "{:.2f}".format((count/total_entries)*100)+'%'] for stat, count in stats.items()]
 rows5 = [["stat", "percentage"]] + stats
@@ -94,4 +94,11 @@ table5.set_cols_align(["c"] * len(rows5[0]))
 table5.set_cols_valign(["c"] * len(rows5[0]))
 table5.set_cols_width([30] * len(rows5[0]))
 table5.add_rows(rows5)
-print(table5.draw()+'\n')
+# print(table5.draw()+'\n')
+
+with open(argv[2], 'w') as output:
+    output.write(table1.draw() + '\n')
+    output.write(table2.draw() + '\n')
+    output.write(table3.draw() + '\n')
+    output.write(table4.draw() + '\n')
+    output.write(table5.draw() + '\n')
